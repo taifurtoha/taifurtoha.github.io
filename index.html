@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Taifur Toha's gamified personal portfolio: KUET IPE undergraduate, achievements, skills, and extracurricular progress." />
+  <meta name="description" content="Taifur Toha's gamified portfolio homepage: first-year KUET IPE undergraduate profile with LinkedIn and academic progression highlights." />
+  <meta property="og:title" content="Taifur Toha | Gamified Portfolio" />
+  <meta property="og:description" content="First-year undergraduate pursuing a BSc in Industrial &amp; Production Engineering at KUET." />
+  <meta property="og:url" content="https://taifurtoha.github.io/" />
+  <link rel="me" href="https://www.linkedin.com/in/taifurtoha/" />
   <title>Taifur Toha | Portfolio</title>
   <style>
     :root {
@@ -19,6 +23,7 @@
       --ok: #66d18f;
       --radius: 16px;
       --shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+      --display-font: "Trebuchet MS", "Arial Black", Impact, "Segoe UI", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -74,6 +79,7 @@
       letter-spacing: 0.04em;
       color: var(--text);
       text-decoration: none;
+      font-family: var(--display-font);
     }
 
     nav ul {
@@ -93,6 +99,8 @@
       padding: 0.45rem 0.75rem;
       border-radius: 999px;
       transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+      font-family: var(--display-font);
+      letter-spacing: 0.03em;
     }
     nav a:hover,
     nav a[aria-current="page"] {
@@ -122,6 +130,8 @@
       margin: 0;
       font-size: clamp(1.8rem, 4vw, 2.7rem);
       line-height: 1.15;
+      font-family: var(--display-font);
+      letter-spacing: 0.03em;
     }
 
     .accent-red { color: var(--red); }
@@ -142,6 +152,8 @@
       font-size: 0.86rem;
       padding: 0.33rem 0.68rem;
       background: rgba(255, 76, 103, 0.1);
+      font-family: var(--display-font);
+      letter-spacing: 0.02em;
     }
 
     .hero-actions {
@@ -160,6 +172,8 @@
       padding: 0.58rem 0.95rem;
       background: #101c33;
       transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
+      font-family: var(--display-font);
+      letter-spacing: 0.03em;
     }
 
     .btn:hover { transform: translateY(-2px); border-color: var(--blue); }
@@ -202,6 +216,15 @@
 
     .panel { padding: 1rem; }
     .panel h2 { margin: 0 0 0.65rem; font-size: 1.1rem; }
+    .panel h2,
+    .profile-pane h2,
+    .highlights h3,
+    summary,
+    .quest-tag,
+    .counter {
+      font-family: var(--display-font);
+      letter-spacing: 0.02em;
+    }
 
     .stat-grid {
       display: grid;
@@ -378,6 +401,7 @@
         <div class="hero-actions">
           <a class="btn primary" href="#contact">Start a Conversation</a>
           <a class="btn" href="#quests">View Quest Log</a>
+          <a class="btn" href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
         </div>
       </div>
 
@@ -388,7 +412,7 @@
           <span class="progress-fill" data-width="34"></span>
         </div>
         <p class="small">XP to next level: <span class="counter" data-target="660">0</span> / 1000</p>
-        <p class="small muted">Editable note: replace with your real XP system or milestone points.</p>
+        <p class="small muted">LinkedIn could not be fetched from this environment. Verified profile: <a href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/taifurtoha</a>.</p>
       </aside>
     </section>
 
@@ -401,16 +425,16 @@
             <span class="small">University Year</span>
           </article>
           <article class="stat">
-            <strong class="counter" data-target="4">0</strong>
-            <span class="small">Core Focus Tracks</span>
+            <strong>BSc</strong>
+            <span class="small">Industrial &amp; Production Engineering</span>
           </article>
           <article class="stat">
-            <strong class="counter" data-target="3">0</strong>
-            <span class="small">Active Clubs/Communities</span>
+            <strong>KUET</strong>
+            <span class="small">Khulna University of Engineering &amp; Technology</span>
           </article>
           <article class="stat">
-            <strong class="counter" data-target="6">0</strong>
-            <span class="small">Sample Quests Logged</span>
+            <strong>Profile Link</strong>
+            <span class="small">LinkedIn profile is connected below</span>
           </article>
         </div>
       </section>
@@ -460,8 +484,8 @@
         <h2 id="edu-title">Education Progression</h2>
         <ol class="timeline" aria-label="Academic timeline">
           <li>
-            <strong>2026 - Year 1 Started</strong>
-            <p class="small">BSc in Industrial &amp; Production Engineering, KUET.</p>
+            <strong>Current Stage</strong>
+            <p class="small">First-year undergraduate in BSc Industrial &amp; Production Engineering at KUET.</p>
           </li>
           <li>
             <strong>Next Milestone</strong>
@@ -496,9 +520,11 @@
         <h2 id="contact-title">Contact / Party Invite</h2>
         <p>Interested in collaborating on engineering, student initiatives, or growth opportunities? Let’s connect.</p>
         <p class="small">
-          Email: <a href="mailto:taifurtoha@example.com">taifurtoha@example.com</a>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/taifurtoha</a>
           <span aria-hidden="true">•</span>
-          LinkedIn/GitHub: <span class="muted">[Editable] Add official profile URLs</span>
+          GitHub:
+          <a href="https://github.com/taifurtoha" target="_blank" rel="noopener noreferrer">github.com/taifurtoha</a>
         </p>
       </section>
     </div>
