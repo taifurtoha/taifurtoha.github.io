@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Taifur Toha's ORV-inspired scenario dashboard portfolio: KUET IPE student profile, skills codex, achievements, social gateway, and interests archive." />
-  <meta property="og:title" content="Taifur Toha | Scenario Dashboard Portfolio" />
-  <meta property="og:description" content="An ORV-inspired static portfolio dashboard featuring profile stats, skills codex, achievements, and social gateway." />
+  <title>Taifur Islam Toha | ORV System Portfolio</title>
+  <meta name="description" content="Taifur Islam Toha's ORV-inspired system interface portfolio with status window, scenarios, skills, inventory, and constellation network." />
+  <meta property="og:title" content="Taifur Islam Toha | ORV System Portfolio" />
+  <meta property="og:description" content="A single-page holographic RPG portfolio interface featuring scenarios, skills, achievements, and interactive inventory." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taifurtoha.github.io/" />
-  <link rel="me" href="https://www.linkedin.com/in/taifurtoha/" />
-  <title>Taifur Toha | Scenario Dashboard</title>
   <style>
     :root {
-      --bg: #03050d;
-      --bg-soft: #060d1b;
-      --panel: rgba(10, 17, 33, 0.85);
-      --panel-strong: rgba(6, 10, 22, 0.92);
-      --line: rgba(96, 160, 255, 0.35);
-      --text: #e7eeff;
-      --muted: #9fb3d8;
-      --cyan: #43d7ff;
-      --electric: #4e8fff;
-      --gold: #ffd067;
-      --violet: #8d79ff;
-      --crimson: #ff4f78;
-      --focus: #ffe18f;
-      --radius: 14px;
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      color-scheme: dark;
+      --bg: #02050f;
+      --bg-2: #050b1c;
+      --panel: rgba(5, 12, 29, 0.78);
+      --panel-strong: rgba(7, 16, 40, 0.92);
+      --line: rgba(83, 167, 255, 0.36);
+      --line-strong: rgba(120, 220, 255, 0.8);
+      --text: #e7f0ff;
+      --muted: #a3b8df;
+      --cyan: #62e6ff;
+      --electric: #5e8dff;
+      --violet: #a57cff;
+      --crimson: #ff5c90;
+      --focus: #ffe08a;
+      --ok: #6df8c8;
+      --warn: #ffb870;
+      --max-content: 1180px;
+      --radius: 16px;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
+      min-height: 100dvh;
+      font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
-      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(circle at 15% 20%, rgba(78, 143, 255, 0.2), transparent 36%),
-        radial-gradient(circle at 80% 0%, rgba(141, 121, 255, 0.2), transparent 33%),
-        radial-gradient(circle at 50% 85%, rgba(255, 79, 120, 0.14), transparent 38%),
-        var(--bg);
-      min-height: 100vh;
-      line-height: 1.55;
+        radial-gradient(1200px 700px at 8% -10%, rgba(100, 154, 255, 0.16), transparent 62%),
+        radial-gradient(900px 600px at 94% 6%, rgba(162, 98, 255, 0.16), transparent 60%),
+        linear-gradient(180deg, #02050f 0%, #040916 40%, #050c1f 100%);
+      overflow-x: hidden;
     }
 
     body::before,
@@ -55,108 +58,132 @@
     }
 
     body::before {
-      background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0 1px, transparent 1px),
-                        radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.25) 0 1px, transparent 1px),
-                        radial-gradient(circle at 45% 75%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px);
-      background-size: 360px 360px, 420px 420px, 500px 500px;
-      opacity: 0.45;
-      animation: drift 28s linear infinite;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(148, 194, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 80% 32%, rgba(170, 204, 255, 0.65), transparent),
+        radial-gradient(1.5px 1.5px at 35% 74%, rgba(166, 148, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 60% 82%, rgba(132, 221, 255, 0.55), transparent),
+        radial-gradient(1px 1px at 92% 88%, rgba(187, 146, 255, 0.5), transparent);
+      animation: drift 24s linear infinite alternate;
+      opacity: 0.8;
     }
 
     body::after {
-      background: linear-gradient(135deg, rgba(67, 215, 255, 0.08), transparent 38%, rgba(255, 79, 120, 0.08));
+      background-image:
+        linear-gradient(130deg, transparent 0 15%, rgba(95, 161, 255, 0.09) 15.2% 15.5%, transparent 15.8% 100%),
+        linear-gradient(310deg, transparent 0 49%, rgba(153, 111, 255, 0.08) 49.2% 49.5%, transparent 49.8% 100%);
+      opacity: 0.55;
     }
+
+    a { color: var(--cyan); }
 
     .skip-link {
       position: absolute;
-      left: -999px;
-      top: 0;
-      background: var(--focus);
+      left: 0.75rem;
+      top: -3rem;
+      background: #fff;
       color: #111;
-      padding: 0.5rem 0.85rem;
-      z-index: 1000;
+      padding: 0.5rem 0.8rem;
+      border-radius: 0.4rem;
+      z-index: 2000;
       font-weight: 700;
-      text-decoration: none;
     }
 
-    .skip-link:focus { left: 0.5rem; top: 0.5rem; }
+    .skip-link:focus-visible { top: 0.75rem; }
 
     :focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 3px;
-      border-radius: 8px;
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
     }
 
-    .shell { width: min(1200px, 100% - 2rem); margin-inline: auto; }
+    .wrapper {
+      width: min(var(--max-content), calc(100% - 1.5rem));
+      margin-inline: auto;
+    }
 
-    .system-bar {
+    /* ===== Header ===== */
+    header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: rgba(2, 5, 12, 0.9);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(67, 215, 255, 0.3);
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(4, 10, 24, 0.78);
+      border-bottom: 1px solid rgba(108, 182, 255, 0.34);
     }
 
-    .system-inner {
+    .topbar {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 0;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 0;
     }
 
-    .system-title {
-      margin: 0;
-      font-size: 0.95rem;
-      letter-spacing: 0.09em;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--cyan);
+      font-size: 0.84rem;
+      color: var(--muted);
     }
 
-    .status-log {
-      color: var(--muted);
-      font-size: 0.9rem;
+    .brand-badge {
+      border: 1px solid var(--line-strong);
+      box-shadow: 0 0 16px rgba(102, 222, 255, 0.35);
+      color: var(--cyan);
+      border-radius: 999px;
+      padding: 0.24rem 0.58rem;
+      font-size: 0.72rem;
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 0.45rem;
       margin: 0;
       padding: 0;
+      list-style: none;
+      display: flex;
       flex-wrap: wrap;
+      gap: 0.45rem;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
-      border: 1px solid transparent;
+      font-size: 0.84rem;
+      border: 1px solid rgba(110, 178, 255, 0.28);
       border-radius: 999px;
-      padding: 0.35rem 0.75rem;
-      font-size: 0.88rem;
-      background: rgba(9, 17, 34, 0.75);
-      transition: border-color .2s ease, transform .2s ease;
+      padding: 0.3rem 0.65rem;
+      background: rgba(8, 15, 35, 0.76);
+      transition: 220ms ease;
     }
 
     nav a:hover,
-    nav a[aria-current="page"] { border-color: var(--line); transform: translateY(-1px); }
+    nav a:focus-visible {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 14px rgba(90, 197, 255, 0.35);
+      transform: translateY(-1px);
+    }
 
-    main { padding: 1.1rem 0 2rem; }
+    main {
+      padding: 1.1rem 0 2.2rem;
+    }
 
     .grid {
       display: grid;
+      gap: 0.95rem;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 1rem;
     }
 
     .panel {
-      background: linear-gradient(180deg, var(--panel), var(--panel-strong));
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(11, 20, 46, 0.88), rgba(3, 8, 25, 0.8));
       box-shadow: var(--shadow);
       padding: 1rem;
+      min-width: 0;
       position: relative;
       overflow: hidden;
     }
@@ -165,286 +192,456 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(67, 215, 255, 0.05), transparent 50%, rgba(255, 208, 103, 0.06));
+      border-radius: inherit;
       pointer-events: none;
+      border: 1px solid transparent;
+      background: linear-gradient(130deg, rgba(96, 210, 255, 0.28), rgba(153, 112, 255, 0.12)) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
     }
-
-    .hero { grid-column: span 8; }
-    .identity { grid-column: span 4; }
-    .timeline { grid-column: span 5; }
-    .attributes { grid-column: span 3; }
-    .achievements { grid-column: span 4; }
-    .skills { grid-column: span 8; }
-    .interests { grid-column: span 7; }
-    .social { grid-column: span 5; }
-
-    h1, h2, h3 { line-height: 1.2; margin-top: 0; }
-    h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); margin-bottom: 0.4rem; }
-    h2 { font-size: 1.15rem; margin-bottom: 0.8rem; letter-spacing: 0.03em; }
-    h3 { font-size: 1rem; margin-bottom: 0.45rem; }
 
     .system-label {
-      display: inline-block;
-      border: 1px solid rgba(255, 208, 103, 0.5);
-      color: var(--gold);
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.2rem 0.65rem;
-      letter-spacing: 0.08em;
+      display: inline-flex;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      letter-spacing: 0.16em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(107, 189, 255, 0.44);
+      color: var(--cyan);
+      background: rgba(13, 31, 66, 0.66);
+      margin-bottom: 0.55rem;
     }
 
-    .hero p { margin: 0.45rem 0; }
-
-    .quote {
-      border-left: 3px solid var(--violet);
-      padding: 0.75rem;
-      margin: 0.9rem 0;
-      background: rgba(141, 121, 255, 0.12);
-      border-radius: 8px;
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.2;
+      text-wrap: balance;
     }
 
-    .tag-list,
-    .stat-list,
-    .link-grid,
-    .interest-columns { display: grid; gap: 0.65rem; }
-
-    .tag-list {
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      margin-top: 0.9rem;
+    h1 {
+      font-size: clamp(1.45rem, 4.5vw, 2.2rem);
+      margin-top: 0.25rem;
+      text-shadow: 0 0 16px rgba(96, 205, 255, 0.34);
     }
 
-    .tag {
-      border: 1px solid rgba(67, 215, 255, 0.3);
+    h2 { font-size: clamp(1.16rem, 3vw, 1.5rem); }
+    h3 { font-size: 1rem; }
+
+    p, li { line-height: 1.52; }
+
+    .muted { color: var(--muted); }
+
+    /* ===== Hero + system activation ===== */
+    .hero {
+      grid-column: span 8;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .status-lines {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .status-lines li {
+      border-left: 2px solid rgba(111, 194, 255, 0.7);
+      padding-left: 0.65rem;
+      font-size: 0.94rem;
+    }
+
+    .activation {
+      margin: 0;
+      border: 1px solid rgba(255, 106, 153, 0.34);
       border-radius: 10px;
-      padding: 0.55rem 0.65rem;
-      background: rgba(11, 20, 38, 0.72);
-      font-size: 0.9rem;
+      background: rgba(17, 7, 20, 0.68);
+      color: #ffd7e5;
+      font-family: Consolas, "Courier New", monospace;
+      padding: 0.65rem;
+      min-height: 3rem;
     }
+
+    .stats {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .meter-row {
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .meter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+    }
+
+    .meter-track {
+      width: 100%;
+      height: 0.66rem;
+      border-radius: 999px;
+      border: 1px solid rgba(121, 193, 255, 0.4);
+      background: rgba(7, 15, 35, 0.95);
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet));
+      box-shadow: 0 0 12px rgba(93, 184, 255, 0.7);
+      transition: width 900ms ease;
+    }
+
+    .hero-side {
+      grid-column: span 4;
+      display: grid;
+      gap: 0.85rem;
+      align-content: start;
+    }
+
+    .console {
+      border: 1px solid rgba(89, 171, 255, 0.36);
+      border-radius: 10px;
+      background: rgba(6, 15, 40, 0.75);
+      min-height: 7.1rem;
+      padding: 0.68rem;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.82rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .console-log {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .console-log li { color: #cfe9ff; }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 0.95rem;
+      gap: 0.6rem;
     }
 
     .btn {
-      text-decoration: none;
-      color: var(--text);
-      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: 1px solid rgba(116, 189, 255, 0.42);
       border-radius: 999px;
-      padding: 0.45rem 0.85rem;
-      font-weight: 650;
-      background: rgba(13, 24, 46, 0.85);
-      transition: transform .2s ease, border-color .2s ease;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.45rem 0.86rem;
+      background: rgba(10, 20, 45, 0.78);
+      transition: 220ms ease;
+      font-size: 0.88rem;
     }
 
-    .btn:hover { transform: translateY(-2px); border-color: var(--cyan); }
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      box-shadow: 0 0 16px rgba(100, 201, 255, 0.4);
+    }
 
     .btn.primary {
-      background: linear-gradient(90deg, rgba(67, 215, 255, 0.2), rgba(255, 79, 120, 0.22));
-      border-color: rgba(255, 208, 103, 0.45);
-    }
-
-    .stat-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-    .stat {
-      border: 1px solid rgba(141, 121, 255, 0.3);
-      border-radius: 10px;
-      padding: 0.7rem;
-      background: rgba(8, 14, 28, 0.75);
-      text-align: center;
-    }
-
-    .counter {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 750;
-      color: var(--cyan);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .meta { color: var(--muted); font-size: 0.88rem; }
-
-    .profile-list,
-    .event-log,
-    .skill-evidence,
-    .flat-list,
-    .interest-columns ul { margin: 0; padding-left: 1.15rem; }
-
-    .profile-list li,
-    .event-log li,
-    .skill-evidence li,
-    .flat-list li,
-    .interest-columns li { margin: 0.32rem 0; }
-
-    .meter-wrap { display: grid; gap: 0.7rem; }
-
-    .meter-row {
-      display: grid;
-      gap: 0.35rem;
-    }
-
-    .meter-row label { font-size: 0.9rem; }
-
-    .meter {
-      height: 0.58rem;
-      border-radius: 999px;
-      border: 1px solid rgba(67, 215, 255, 0.35);
-      background: #061126;
-      overflow: hidden;
-    }
-
-    .meter span {
-      display: block;
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--crimson));
-      transition: width .9s ease;
-    }
-
-    .event-log {
-      border-left: 2px solid rgba(67, 215, 255, 0.35);
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    .event-log li { position: relative; padding-left: 0.35rem; }
-
-    .event-log li::before {
-      content: "";
-      position: absolute;
-      left: -1.45rem;
-      top: 0.4rem;
-      width: 0.62rem;
-      height: 0.62rem;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 3px rgba(255, 208, 103, 0.2);
-    }
-
-    details {
-      border: 1px solid rgba(96, 160, 255, 0.28);
-      border-radius: 10px;
-      background: rgba(9, 17, 34, 0.72);
-      margin-bottom: 0.55rem;
-      overflow: hidden;
-    }
-
-    summary {
-      cursor: pointer;
-      padding: 0.62rem 0.75rem;
+      border-color: rgba(123, 214, 255, 0.78);
+      color: #001423;
+      background: linear-gradient(120deg, #73ebff, #95b4ff);
       font-weight: 700;
-      color: var(--cyan);
     }
 
-    .skill-list {
-      list-style: none;
-      margin: 0;
-      padding: 0 0.75rem 0.75rem;
+    /* ===== Scenario, skills, inventory, links ===== */
+    .scenarios,
+    .skills,
+    .inventory,
+    .network {
+      grid-column: span 12;
+    }
+
+    .split {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid rgba(113, 184, 255, 0.34);
+      border-radius: 12px;
+      background: rgba(6, 15, 35, 0.8);
+      padding: 0.78rem;
+    }
+
+    .card ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1rem;
+      display: grid;
+      gap: 0.38rem;
+    }
+
+    .ability-grid,
+    .item-grid,
+    .network-grid {
+      margin-top: 0.8rem;
+      display: grid;
+      gap: 0.72rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .ability {
+      border: 1px solid rgba(110, 188, 255, 0.35);
+      border-radius: 12px;
+      padding: 0.74rem;
+      background: rgba(7, 16, 41, 0.84);
+      display: grid;
+      gap: 0.48rem;
+    }
+
+    .ability .name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #d7ebff;
+    }
+
+    .ability .lvl { color: var(--muted); font-size: 0.82rem; }
+
+    .mini-track {
+      height: 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(117, 185, 255, 0.32);
+      background: rgba(5, 10, 26, 0.9);
+      overflow: hidden;
+    }
+
+    .mini-fill {
+      height: 100%;
+      background: linear-gradient(90deg, rgba(98, 230, 255, 0.95), rgba(165, 124, 255, 0.95));
+      box-shadow: 0 0 10px rgba(98, 230, 255, 0.45);
+    }
+
+    .item {
+      border-radius: 12px;
+      padding: 0.8rem;
+      border: 1px solid rgba(136, 193, 255, 0.35);
+      background: rgba(7, 15, 35, 0.82);
       display: grid;
       gap: 0.52rem;
     }
 
-    .skill-entry {
-      border: 1px solid rgba(141, 121, 255, 0.28);
-      border-radius: 8px;
-      padding: 0.55rem 0.65rem;
-      background: rgba(6, 10, 20, 0.7);
-    }
+    .rarity-legendary { box-shadow: 0 0 16px rgba(255, 182, 114, 0.35); border-color: rgba(255, 181, 110, 0.68); }
+    .rarity-epic { box-shadow: 0 0 16px rgba(171, 122, 255, 0.35); border-color: rgba(171, 122, 255, 0.65); }
+    .rarity-rare { box-shadow: 0 0 16px rgba(94, 164, 255, 0.3); border-color: rgba(102, 185, 255, 0.58); }
+    .rarity-common { box-shadow: 0 0 10px rgba(120, 196, 255, 0.2); }
 
-    .skill-entry h4 {
-      margin: 0;
-      font-size: 0.94rem;
-    }
-
-    .skill-evidence {
-      margin-top: 0.4rem;
+    .rarity {
+      display: inline-flex;
+      width: fit-content;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-size: 0.88rem;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      padding: 0.18rem 0.45rem;
     }
 
-    .filter-wrap {
+    .item-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+
+    .item-preview {
+      border-radius: 8px;
+      border: 1px solid rgba(117, 184, 255, 0.3);
+      background: rgba(6, 13, 29, 0.85);
+      min-height: 76px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .item-preview img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pdf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      color: #ffd9a7;
+      border: 1px solid rgba(255, 187, 108, 0.5);
+      border-radius: 999px;
+      padding: 0.22rem 0.48rem;
+      background: rgba(38, 22, 5, 0.68);
+    }
+
+    .item button {
+      width: fit-content;
+      border: 1px solid rgba(255, 130, 162, 0.5);
+      background: rgba(42, 14, 22, 0.64);
+      color: #ffd4df;
+      border-radius: 8px;
+      padding: 0.26rem 0.55rem;
+      cursor: pointer;
+    }
+
+    .item button:hover,
+    .item button:focus-visible {
+      border-color: rgba(255, 150, 178, 0.75);
+      box-shadow: 0 0 10px rgba(255, 119, 162, 0.25);
+    }
+
+    .dropzone {
+      margin-top: 0.85rem;
+      border: 1px dashed rgba(114, 192, 255, 0.62);
+      border-radius: 12px;
+      background: rgba(8, 18, 45, 0.7);
+      padding: 0.95rem;
+      display: grid;
+      gap: 0.55rem;
+      transition: 220ms ease;
+    }
+
+    .dropzone.active {
+      border-color: rgba(132, 218, 255, 0.95);
+      box-shadow: 0 0 18px rgba(83, 190, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .dropzone-controls {
       display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
       align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 0.7rem;
     }
 
-    .filter-wrap input {
-      border: 1px solid rgba(67, 215, 255, 0.35);
-      background: rgba(3, 7, 15, 0.9);
-      color: var(--text);
-      border-radius: 8px;
-      padding: 0.45rem 0.6rem;
-      min-width: min(100%, 360px);
+    .dropzone label {
+      display: inline-flex;
+      border: 1px solid rgba(118, 194, 255, 0.6);
+      border-radius: 999px;
+      background: rgba(8, 19, 46, 0.95);
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font-size: 0.86rem;
     }
 
-    .hidden-skill { display: none !important; }
-
-    .interest-columns {
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    .dropzone input[type="file"] {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+      border: 0;
+      padding: 0;
+      margin: -1px;
     }
 
-    .interest-columns article {
-      border: 1px solid rgba(255, 208, 103, 0.28);
-      border-radius: 10px;
-      padding: 0.6rem 0.7rem;
-      background: rgba(8, 15, 29, 0.72);
+    .status-msg {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin: 0;
     }
 
-    .link-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-
-    .gateway-item {
-      border: 1px solid rgba(67, 215, 255, 0.25);
-      border-radius: 10px;
-      padding: 0.6rem 0.7rem;
-      background: rgba(8, 15, 29, 0.72);
+    .channel {
+      border: 1px solid rgba(117, 192, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(7, 14, 34, 0.82);
+      padding: 0.72rem;
+      display: grid;
+      gap: 0.32rem;
     }
 
-    .gateway-item a {
-      color: var(--text);
-      text-decoration-thickness: 1px;
+    .channel strong { color: #def0ff; }
+    .channel small { color: var(--muted); }
+
+    .channel a {
+      width: fit-content;
+      text-decoration-color: rgba(149, 221, 255, 0.7);
       text-underline-offset: 2px;
     }
 
-    .console {
-      border: 1px solid rgba(255, 79, 120, 0.35);
-      border-radius: 10px;
-      background: rgba(18, 8, 20, 0.55);
-      color: #ffd5e2;
-      padding: 0.65rem;
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 0.84rem;
-      margin-top: 0.7rem;
-      min-height: 3.4rem;
+    .notify {
+      position: fixed;
+      right: 0.8rem;
+      bottom: 0.8rem;
+      width: min(320px, calc(100vw - 1.6rem));
+      z-index: 30;
+      display: grid;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      border: 1px solid rgba(114, 196, 255, 0.5);
+      border-radius: 11px;
+      background: rgba(6, 16, 40, 0.92);
+      box-shadow: 0 0 16px rgba(102, 181, 255, 0.28);
+      padding: 0.55rem 0.7rem;
+      color: #d8eeff;
+      font-size: 0.82rem;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: toastIn 320ms ease forwards;
     }
 
     footer {
-      border-top: 1px solid rgba(67, 215, 255, 0.32);
+      border-top: 1px solid rgba(107, 186, 255, 0.32);
       color: var(--muted);
       text-align: center;
-      padding: 1rem 0 1.4rem;
-      margin-top: 1rem;
+      padding: 1rem 0 1.3rem;
+      font-size: 0.84rem;
     }
 
     @keyframes drift {
-      from { transform: translateY(0); }
-      to { transform: translateY(35px); }
+      from { transform: translateY(-10px); }
+      to { transform: translateY(20px); }
     }
 
-    @media (max-width: 1020px) {
-      .hero, .identity, .timeline, .attributes, .achievements, .skills, .interests, .social { grid-column: span 12; }
-      .stat-list { grid-template-columns: repeat(3, minmax(80px, 1fr)); }
+    @keyframes toastIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @media (max-width: 620px) {
-      .stat-list { grid-template-columns: 1fr; }
-      .shell { width: min(1200px, 100% - 1rem); }
+    @media (max-width: 990px) {
+      .hero,
+      .hero-side {
+        grid-column: span 12;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .wrapper { width: min(var(--max-content), calc(100% - 1rem)); }
+      .panel { padding: 0.88rem; }
+      nav ul { gap: 0.36rem; }
+      nav a { font-size: 0.78rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -454,430 +651,499 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
       }
-      body::before { animation: none; }
+
+      body::before { animation: none !important; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="system-bar">
-    <div class="shell system-inner">
-      <p class="system-title">System Message: Scenario Dashboard Initialized</p>
-      <p class="status-log" id="statusLog" aria-live="polite">[Constellation Feed] Awaiting signal...</p>
-      <nav aria-label="Primary navigation">
+  <!-- Top navigation -->
+  <header>
+    <div class="wrapper topbar">
+      <p class="brand"><span class="brand-badge">System</span>Omniscient Interface</p>
+      <nav aria-label="Primary">
         <ul>
-          <li><a href="#identity" aria-current="page">Identity</a></li>
-          <li><a href="#skills-codex">Skills Codex</a></li>
-          <li><a href="#achievement-archive">Archive</a></li>
-          <li><a href="#interests-codex">Interests</a></li>
-          <li><a href="#social-gateway">Gateway</a></li>
+          <li><a href="#status-window">Status Window</a></li>
+          <li><a href="#main-scenarios">Main Scenarios</a></li>
+          <li><a href="#acquired-skills">Acquired Skills</a></li>
+          <li><a href="#system-inventory">System Inventory</a></li>
+          <li><a href="#constellation-network">Constellation Network</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content" class="shell" tabindex="-1">
+  <main id="main-content" class="wrapper" tabindex="-1">
     <div class="grid">
-      <section class="panel hero" id="identity" aria-labelledby="identity-title">
-        <span class="system-label">Scenario Window</span>
-        <h1 id="identity-title">Taifur Toha</h1>
-        <p>First-year BSc student in <strong>Industrial &amp; Production Engineering</strong> at <strong>Khulna University of Engineering &amp; Technology (KUET)</strong>, focused on academic growth, teamwork, and systems-oriented progress.</p>
-        <p class="quote">“It is always more difficult to fight against faith than against knowledge.” — A.H.</p>
-        <div class="stat-list" aria-label="Social-profile snapshot data">
-          <article class="stat">
-            <span class="counter" data-target="531">0</span>
-            <span class="meta">followers</span>
-          </article>
-          <article class="stat">
-            <span class="counter" data-target="139">0</span>
-            <span class="meta">following</span>
-          </article>
-          <article class="stat">
-            <span class="counter" data-target="48">0</span>
-            <span class="meta">posts</span>
-          </article>
+      <!-- Personal status window hero -->
+      <section class="panel hero" id="status-window" aria-labelledby="status-title">
+        <span class="system-label">Personal Status Window</span>
+        <h1 id="status-title">Taifur Islam Toha</h1>
+        <p class="muted">Verified profile intelligence synchronized. Scenario context: first-year IPE journey, leadership development, and systems-focused growth.</p>
+
+        <ul class="status-lines">
+          <li><strong>Incarnation Body Age:</strong> 20</li>
+          <li><strong>Class / Affiliation:</strong> First-Year Student, Industrial and Production Engineering (KUET)</li>
+          <li><strong>Core Track:</strong> Academic growth, event participation, community engagement, and practical problem solving</li>
+        </ul>
+
+        <p class="activation" id="activationConsole" aria-live="polite" aria-atomic="true">[Boot] Initializing star stream...</p>
+
+        <div class="stats" aria-label="Overall stats">
+          <div class="meter-row">
+            <div class="meter-header"><span>Intelligence</span><span>87%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-progress="87"></div></div>
+          </div>
+          <div class="meter-row">
+            <div class="meter-header"><span>Leadership</span><span>83%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-progress="83"></div></div>
+          </div>
+          <div class="meter-row">
+            <div class="meter-header"><span>Adaptability</span><span>89%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-progress="89"></div></div>
+          </div>
+          <div class="meter-row">
+            <div class="meter-header"><span>Communication</span><span>86%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-progress="86"></div></div>
+          </div>
+          <div class="meter-row">
+            <div class="meter-header"><span>Problem Solving</span><span>90%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-progress="90"></div></div>
+          </div>
         </div>
-        <div class="tag-list" aria-label="Profile tags and milestones">
-          <div class="tag"><strong>Location:</strong> Khulna, Bangladesh</div>
-          <div class="tag"><strong>Education milestone:</strong> KUET — 25 June 2026</div>
-          <div class="tag"><strong>Visit check-in:</strong> Khagrachari, Chittagong, Bangladesh</div>
-          <div class="tag"><strong>Hobbies:</strong> Travelling, Reading, Chess, Anime, Manhwa, History, Stargazing, Philosophy, Psychology</div>
-        </div>
+
         <div class="hero-actions">
-          <a class="btn primary" href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-          <a class="btn" href="https://github.com/taifurtoha" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-          <a class="btn" href="#skills-codex">Open Skills Codex</a>
+          <a class="btn primary" href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">Open LinkedIn Profile</a>
+          <a class="btn" href="https://github.com/taifurtoha" target="_blank" rel="noopener noreferrer">Open GitHub Gateway</a>
+          <a class="btn" href="#system-inventory">Jump to Inventory</a>
         </div>
       </section>
 
-      <aside class="panel identity" aria-labelledby="profile-pane-title">
-        <span class="system-label">Hero Identity Panel</span>
-        <h2 id="profile-pane-title">Constellation / Attribute Record</h2>
-        <ul class="profile-list">
-          <li><strong>Name:</strong> Taifur Toha</li>
-          <li><strong>Current role:</strong> Student (BSc IPE, KUET)</li>
-          <li><strong>Academic positioning:</strong> First-year undergraduate building Industrial &amp; Production Engineering foundations</li>
-          <li><strong>Public handle marker:</strong> @taifurtoha</li>
-        </ul>
-        <div class="console" id="systemConsole" aria-live="polite">
-          [System] Probability stream stable. Scenario integrity maintained.
+      <!-- Live system status console -->
+      <aside class="panel hero-side" aria-labelledby="live-console-title">
+        <span class="system-label">Live Status Console</span>
+        <h2 id="live-console-title">Constellation Alerts</h2>
+        <div class="console" aria-live="polite" aria-atomic="false">
+          <ul class="console-log" id="consoleLog">
+            <li>[System] Awaiting scenario activation...</li>
+          </ul>
         </div>
+        <p class="muted">All notifications remain local to this browser session.</p>
       </aside>
 
-      <section class="panel timeline" aria-labelledby="scenario-title">
-        <span class="system-label">Scenario Timeline</span>
-        <h2 id="scenario-title">Milestone Progress</h2>
-        <ol class="event-log">
-          <li><strong>Current Arc:</strong> First-year BSc in Industrial &amp; Production Engineering at KUET.</li>
-          <li><strong>Education Marker:</strong> Khulna University of Engineering &amp; Technology - KUET (On 25 June 2026).</li>
-          <li><strong>Community Arc:</strong> Scout and community credential history integrated into achievement records.</li>
-          <li><strong>Live Snapshot:</strong> Social-profile snapshot data synchronized (531 followers · 139 following · 48 posts).</li>
-        </ol>
-      </section>
-
-      <section class="panel attributes" aria-labelledby="attribute-title">
-        <span class="system-label">Stigma Matrix</span>
-        <h2 id="attribute-title">Scenario Attributes</h2>
-        <div class="meter-wrap">
-          <div class="meter-row">
-            <label for="meter-lead">Leadership Potential</label>
-            <div class="meter" id="meter-lead" aria-label="Leadership potential meter"><span class="progress" data-width="88"></span></div>
-          </div>
-          <div class="meter-row">
-            <label for="meter-safety">Safety &amp; Emergency Knowledge</label>
-            <div class="meter" id="meter-safety" aria-label="Safety knowledge meter"><span class="progress" data-width="91"></span></div>
-          </div>
-          <div class="meter-row">
-            <label for="meter-digital">AI &amp; Digital Literacy</label>
-            <div class="meter" id="meter-digital" aria-label="AI and digital literacy meter"><span class="progress" data-width="85"></span></div>
-          </div>
-          <div class="meter-row">
-            <label for="meter-community">Community Engagement</label>
-            <div class="meter" id="meter-community" aria-label="Community engagement meter"><span class="progress" data-width="90"></span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel achievements" id="achievement-archive" aria-labelledby="archive-title">
-        <span class="system-label">Achievement Archive</span>
-        <h2 id="archive-title">Credential Highlights</h2>
-        <ul class="flat-list">
-          <li>Gemini Certification for Students (University)</li>
-          <li>Gemini Certification for Students (K12)</li>
-          <li>Google AI for Higher Education</li>
-          <li>ResGeo Lab Certified Fundamentals of Google Earth Engine</li>
-          <li>APBN Certified Crime Prevention Course</li>
-          <li>Organizer - Creative Challenge 2.0</li>
-          <li>Community Development Award</li>
-          <li>Clean Area &amp; Traffic Event</li>
-          <li>ATAS Bangladesh Membership Certificate</li>
-          <li>Bangladesh Scouts Certified President's Scout</li>
-          <li>Bangladesh Scouts Certified Patrol Leader</li>
-          <li>Bangladesh Scouts Certified Badge Course</li>
-          <li>14th Regional Scout Rally</li>
-          <li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li>
-          <li>11th Asia-Pacific Scout Youth Forum</li>
-          <li>JotaJoti Jamboree - 2019</li>
-          <li>Earth Tribe Initiative in the Community</li>
-          <li>Shapla Cub Award</li>
-        </ul>
-      </section>
-
-      <section class="panel skills" id="skills-codex" aria-labelledby="skills-title">
-        <span class="system-label">Skill Codex</span>
-        <h2 id="skills-title">LinkedIn Skills / Credentials Matrix</h2>
-        <div class="filter-wrap">
-          <label for="skillFilter">Filter skill entries</label>
-          <input id="skillFilter" type="search" placeholder="Search by skill or credential (e.g., Safety, Gemini, Rally)" />
-        </div>
-
-        <details open>
-          <summary>AI &amp; Digital</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Core AI Literacy &amp; Principles</h4><ul class="skill-evidence"><li>Gemini Certification for Students (University)</li></ul></li>
-            <li class="skill-entry"><h4>Core AI Literacy &amp; Tools</h4><ul class="skill-evidence"><li>Gemini Certification for Students (K12)</li></ul></li>
-            <li class="skill-entry"><h4>AI Productivity &amp; Tool Mastery</h4><ul class="skill-evidence"><li>Google AI for Higher Education</li></ul></li>
-            <li class="skill-entry"><h4>GEE Development Environments &amp; Syntax</h4><ul class="skill-evidence"><li>ResGeo Lab Certified Fundamentals of Google Earth Engine</li></ul></li>
-            <li class="skill-entry"><h4>Digital Literacy &amp; Safety</h4><ul class="skill-evidence"><li>JotaJoti Jamboree - 2019</li></ul></li>
-            <li class="skill-entry"><h4>Amateur Radio Operation</h4><ul class="skill-evidence"><li>JotaJoti Jamboree - 2019</li></ul></li>
-            <li class="skill-entry"><h4>Alternative Communication Systems</h4><ul class="skill-evidence"><li>JotaJoti Jamboree - 2019</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Leadership &amp; Communication</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Communication</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>14th Regional Scout Rally</li><li>ATAS Bangladesh Membership Certificate</li></ul></li>
-            <li class="skill-entry"><h4>Leadership</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li><li>APBN Certified Crime Prevention Course</li></ul></li>
-            <li class="skill-entry"><h4>Team Leadership</h4><ul class="skill-evidence"><li>Khulna University of Engineering and Technology and 1 other school</li><li>Bangladesh Scouts Certified Patrol Leader</li><li>Bangladesh Scouts Certified President's Scout</li></ul></li>
-            <li class="skill-entry"><h4>Teamwork</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li><li>Shapla Cub Award</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li></ul></li>
-            <li class="skill-entry"><h4>Team Coordination</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>Bangladesh Scouts Certified Badge Course</li></ul></li>
-            <li class="skill-entry"><h4>Cross-Cultural Communication</h4><ul class="skill-evidence"><li>JotaJoti Jamboree - 2019</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li></ul></li>
-            <li class="skill-entry"><h4>Public Relations &amp; Communication</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li></ul></li>
-            <li class="skill-entry"><h4>Stakeholder Engagement</h4><ul class="skill-evidence"><li>Community Development Award</li></ul></li>
-            <li class="skill-entry"><h4>Stakeholder Management</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li></ul></li>
-            <li class="skill-entry"><h4>Field Leadership</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Safety &amp; Emergency Response</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Public Safety</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Traffic Control</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Crowd Control</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Road Safety</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Crisis Management</h4><ul class="skill-evidence"><li>Bangladesh Scouts Certified President's Scout</li><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Emergency Management</h4><ul class="skill-evidence"><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li></ul></li>
-            <li class="skill-entry"><h4>Risk Assessment &amp; Hazard Identification</h4><ul class="skill-evidence"><li>APBN Certified Crime Prevention Course</li></ul></li>
-            <li class="skill-entry"><h4>Emergency Response &amp; Reporting</h4><ul class="skill-evidence"><li>APBN Certified Crime Prevention Course</li></ul></li>
-            <li class="skill-entry"><h4>Basic Crime Prevention Principles</h4><ul class="skill-evidence"><li>APBN Certified Crime Prevention Course</li></ul></li>
-            <li class="skill-entry"><h4>Community &amp; Public Safety Awareness</h4><ul class="skill-evidence"><li>APBN Certified Crime Prevention Course</li><li>Bangladesh Scouts Certified President's Scout</li></ul></li>
-            <li class="skill-entry"><h4>Peer Influence &amp; Resistance</h4><ul class="skill-evidence"><li>APBN Certified Crime Prevention Course</li></ul></li>
-            <li class="skill-entry"><h4>Outdoor Safety Management</h4><ul class="skill-evidence"><li>Bangladesh Scouts Certified Patrol Leader</li></ul></li>
-            <li class="skill-entry"><h4>First Aid</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>14th Regional Scout Rally</li><li>Bangladesh Scouts Certified Patrol Leader</li></ul></li>
-            <li class="skill-entry"><h4>Water Safety</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Community &amp; Environment</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Community Development</h4><ul class="skill-evidence"><li>Bangladesh Scouts Certified President's Scout</li><li>Community Development Award</li><li>Earth Tribe Initiative in the Community</li></ul></li>
-            <li class="skill-entry"><h4>Community Engagement</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>Earth Tribe Initiative in the Community</li></ul></li>
-            <li class="skill-entry"><h4>Community Service</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-            <li class="skill-entry"><h4>Community Service &amp; Volunteerism</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li><li>Bangladesh Scouts Certified Patrol Leader</li></ul></li>
-            <li class="skill-entry"><h4>Environmental Health</h4><ul class="skill-evidence"><li>Clean Area &amp; Traffic Event</li></ul></li>
-            <li class="skill-entry"><h4>Environmental Education</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-            <li class="skill-entry"><h4>Environmental Awareness</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>14th Regional Scout Rally</li><li>Bangladesh Scouts Certified Badge Course</li></ul></li>
-            <li class="skill-entry"><h4>Public Health Education</h4><ul class="skill-evidence"><li>Community Development Award</li></ul></li>
-            <li class="skill-entry"><h4>Civic Responsibility &amp; Ethics</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>Shapla Cub Award</li><li>14th Regional Scout Rally</li></ul></li>
-            <li class="skill-entry"><h4>Global Citizenship</h4><ul class="skill-evidence"><li>JotaJoti Jamboree - 2019</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Scouts &amp; Outdoor Survival</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Nature Navigation</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-            <li class="skill-entry"><h4>Pioneering &amp; Wilderness Survival</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>Shapla Cub Award</li><li>14th Regional Scout Rally</li></ul></li>
-            <li class="skill-entry"><h4>Camping &amp; Navigation</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>14th Regional Scout Rally</li><li>10th Bangladesh &amp; 3rd SAANSO Scout Jamboree</li></ul></li>
-            <li class="skill-entry"><h4>Swimming</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>Bangladesh Scouts Certified President's Scout</li></ul></li>
-            <li class="skill-entry"><h4>Discipline &amp; Drill</h4><ul class="skill-evidence"><li>Uttara High School and College</li><li>Shapla Cub Award</li><li>14th Regional Scout Rally</li></ul></li>
-            <li class="skill-entry"><h4>Housekeeping</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-            <li class="skill-entry"><h4>Cooking</h4><ul class="skill-evidence"><li>Shapla Cub Award</li></ul></li>
-            <li class="skill-entry"><h4>Patrol System Collaboration</h4><ul class="skill-evidence"><li>14th Regional Scout Rally</li></ul></li>
-            <li class="skill-entry"><h4>Adaptability</h4><ul class="skill-evidence"><li>14th Regional Scout Rally</li></ul></li>
-            <li class="skill-entry"><h4>Self-Reliance</h4><ul class="skill-evidence"><li>14th Regional Scout Rally</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Project &amp; Operations</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Project Management</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li></ul></li>
-            <li class="skill-entry"><h4>Campaign &amp; Project Coordination</h4><ul class="skill-evidence"><li>Community Development Award</li></ul></li>
-            <li class="skill-entry"><h4>Event Coordination</h4><ul class="skill-evidence"><li>Bangladesh Scouts Certified President's Scout</li></ul></li>
-            <li class="skill-entry"><h4>Logistics Management</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li></ul></li>
-            <li class="skill-entry"><h4>Resource Management</h4><ul class="skill-evidence"><li>Organizer - Creative Challenge 2.0</li></ul></li>
-            <li class="skill-entry"><h4>Strategic Planning</h4><ul class="skill-evidence"><li>Shapla Cub Award</li><li>Bangladesh Scouts Certified President's Scout</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Languages &amp; Tools</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Bengali</h4><ul class="skill-evidence"><li>Uttara High School and College</li></ul></li>
-            <li class="skill-entry"><h4>English</h4><ul class="skill-evidence"><li>Uttara High School and College</li></ul></li>
-            <li class="skill-entry"><h4>Microsoft Word</h4><ul class="skill-evidence"><li>Uttara High School and College</li></ul></li>
-          </ul>
-        </details>
-
-        <details>
-          <summary>Problem Solving</summary>
-          <ul class="skill-list">
-            <li class="skill-entry"><h4>Problem Solving</h4><ul class="skill-evidence"><li>Khulna University of Engineering and Technology and 1 other school</li><li>Organizer - Creative Challenge 2.0</li><li>11th Asia-Pacific Scout Youth Forum</li></ul></li>
-            <li class="skill-entry"><h4>Team Problem Solving</h4><ul class="skill-evidence"><li>Uttara High School and College</li></ul></li>
-          </ul>
-        </details>
-      </section>
-
-      <section class="panel interests" id="interests-codex" aria-labelledby="interest-title">
-        <span class="system-label">Interests Codex</span>
-        <h2 id="interest-title">Music, Shows, Films, Games &amp; Sports</h2>
-        <div class="interest-columns">
-          <article>
-            <h3>Music</h3>
+      <!-- Main scenarios -->
+      <section class="panel scenarios" id="main-scenarios" aria-labelledby="scenarios-title">
+        <span class="system-label">Main Scenarios</span>
+        <h2 id="scenarios-title">Scenario Progression Record</h2>
+        <p class="muted">Only verified profile intelligence is shown below. LinkedIn details can be extended later without changing this structure.</p>
+        <div class="split">
+          <article class="card" aria-labelledby="completed-scenarios-title">
+            <h3 id="completed-scenarios-title">Completed Scenarios</h3>
             <ul>
-              <li>Asterisk (Bleach) - Ren Avel</li>
-              <li>Unravel Acoustic - Piano - Shyar Kiki</li>
-              <li>pick up the phone - Henry Moodie</li>
-              <li>僕が死のうと思ったのは - Tomo &amp; Julie</li>
-              <li>Life is Like a Boat - Rie fu</li>
-              <li>Namae o Yobu yo - ラックライフ</li>
-              <li>Ei Je Dunia - Bagdhara</li>
-              <li>How Do I Say Goodbye - Dean Lewis</li>
-              <li>Fearless - Taylor Swift</li>
+              <li>Six years of tutoring experience completed across ongoing academic phases.</li>
+              <li>Successfully participated in <strong>BizBash 6.0</strong>.</li>
+              <li>Successfully participated in <strong>The Odyssey '26</strong>.</li>
+              <li>Built leadership, teamwork, and community-service discipline through scout and event activities.</li>
+              <li>Earned profile-backed certificates in AI/digital learning and emergency/community readiness.</li>
             </ul>
           </article>
-          <article>
-            <h3>TV Shows</h3>
+          <article class="card" aria-labelledby="ongoing-quests-title">
+            <h3 id="ongoing-quests-title">Ongoing Quests</h3>
             <ul>
-              <li>Bleach 千年血戦篇 (Bleach: Thousand-Year Blood War)</li>
-              <li>Code Geass: Hangyaku No Lelouch Picture Drama</li>
-              <li>Death Note</li>
-              <li>Steins;Gate</li>
-              <li>Naruto Shippuden</li>
-              <li>Ben 10</li>
-              <li>Adventure Time</li>
-              <li>Regular Show</li>
-              <li>Hellsing Ultimate</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Films</h3>
-            <ul>
-              <li>Weathering With You</li>
-              <li>Interstellar</li>
-              <li>John Wick</li>
-              <li>Saw</li>
-              <li>Your Name</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Games</h3>
-            <ul>
-              <li>Garena Free Fire</li>
-              <li>Clash of Clans</li>
-              <li>Alto's Adventure</li>
-              <li>Moonlight Sculptor</li>
-              <li>Bleach: Brave Souls</li>
-              <li>PUBG Mobile</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Sports Teams / Athletes</h3>
-            <ul>
-              <li>Leo Messi</li>
-              <li>AFA - Selección Argentina</li>
-              <li>Bangladesh Cricket : The Tigers</li>
+              <li>Current educational quest: First-Year BSc in Industrial and Production Engineering at KUET.</li>
+              <li>Expanding web development and hardware support capability through practical projects.</li>
+              <li>Continuing collaboration-focused growth in communication, leadership, and project/event coordination.</li>
+              <li>Maintaining English and Bengali communication readiness for academic and community settings.</li>
+              <li>Preparing for future portfolio intelligence updates from verified profile sources.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="panel social" id="social-gateway" aria-labelledby="social-title">
-        <span class="system-label">Social Gateway</span>
-        <h2 id="social-title">Public Handles &amp; Connection Routes</h2>
-        <div class="link-grid">
-          <article class="gateway-item"><strong>Instagram</strong><br /><a href="https://www.instagram.com/taifurtoha/" target="_blank" rel="noopener noreferrer">taifurtoha</a><br /><span class="meta">147 followers · confirmed · public</span></article>
-          <article class="gateway-item"><strong>Threads</strong><br /><a href="https://www.threads.net/@taifurtoha" target="_blank" rel="noopener noreferrer">taifurtoha</a><br /><span class="meta">Public</span></article>
-          <article class="gateway-item"><strong>Pinterest</strong><br /><a href="https://www.pinterest.com/taifurtoha/" target="_blank" rel="noopener noreferrer">taifurtoha</a><br /><span class="meta">Public</span></article>
-          <article class="gateway-item"><strong>X</strong><br /><a href="https://x.com/taifurtaha" target="_blank" rel="noopener noreferrer">taifurtaha</a><br /><span class="meta">Public</span></article>
-          <article class="gateway-item"><strong>Snapchat</strong><br /><span>taifur.taha</span><br /><span class="meta">Public handle listed (URL not inferred)</span></article>
-          <article class="gateway-item"><strong>LINE</strong><br /><span>taifurtoha</span><br /><span class="meta">Public handle listed (URL not inferred)</span></article>
-          <article class="gateway-item"><strong>Tumblr</strong><br /><a href="https://durbar7.tumblr.com/" target="_blank" rel="noopener noreferrer">durbar7</a><br /><span class="meta">Public</span></article>
-          <article class="gateway-item"><strong>LinkedIn</strong><br /><a href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">taifurtoha</a><br /><span class="meta">Public</span></article>
-          <article class="gateway-item"><strong>YouTube</strong><br /><span>taifurtoha</span><br /><span class="meta">Public handle listed (URL not inferred)</span></article>
-          <article class="gateway-item"><strong>GitHub</strong><br /><a href="https://github.com/taifurtoha" target="_blank" rel="noopener noreferrer">taifurtoha</a><br /><span class="meta">Verified repository profile</span></article>
+      <!-- Skills codex -->
+      <section class="panel skills" id="acquired-skills" aria-labelledby="skills-title">
+        <span class="system-label">Acquired Skills</span>
+        <h2 id="skills-title">Ability Registry</h2>
+        <div class="ability-grid">
+          <article class="ability"><p class="name">[Exclusive Skill: HTML/JS Web Development Lv. 3]</p><p class="lvl">Level 3 / 5</p><div class="mini-track"><div class="mini-fill" style="width:60%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Hardware Troubleshooting Lv. 5]</p><p class="lvl">Level 5 / 5</p><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: AI &amp; Digital Literacy Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Communication Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Leadership Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Teamwork Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Project &amp; Event Coordination Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Safety &amp; Emergency Response Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Community Engagement Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Problem Solving Lv. 5]</p><p class="lvl">Level 5 / 5</p><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Bengali Lv. 5]</p><p class="lvl">Level 5 / 5</p><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: English Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+          <article class="ability"><p class="name">[Skill: Microsoft Word Lv. 4]</p><p class="lvl">Level 4 / 5</p><div class="mini-track"><div class="mini-fill" style="width:80%"></div></div></article>
+        </div>
+      </section>
+
+      <!-- System inventory and upload zone -->
+      <section class="panel inventory" id="system-inventory" aria-labelledby="inventory-title">
+        <span class="system-label">Acquired Items / System Inventory</span>
+        <h2 id="inventory-title">Artifact Storage</h2>
+        <p class="muted">Rarity tiers indicate profile-highlight priority, not official ranking.</p>
+
+        <div class="item-grid" id="itemGrid">
+          <article class="item rarity-legendary">
+            <span class="rarity" style="color:#ffcb8e">Legendary</span>
+            <h3>[Item: Google Gemini Certified Student]</h3>
+            <p class="item-meta">Verified achievement from profile intelligence.</p>
+          </article>
+          <article class="item rarity-epic">
+            <span class="rarity" style="color:#c7a7ff">Epic</span>
+            <h3>[Item: Coursera Intro to AI]</h3>
+            <p class="item-meta">Verified AI learning progression milestone.</p>
+          </article>
+          <article class="item rarity-rare">
+            <span class="rarity" style="color:#9ed5ff">Rare</span>
+            <h3>[Item: President's Scout Award]</h3>
+            <p class="item-meta">Verified scouting honor and leadership marker.</p>
+          </article>
+          <article class="item rarity-common">
+            <span class="rarity">Common+</span>
+            <h3>[Item: Google AI for Higher Education]</h3>
+            <p class="item-meta">Existing profile-backed learning record.</p>
+          </article>
+          <article class="item rarity-common">
+            <span class="rarity">Common+</span>
+            <h3>[Item: ResGeo Lab Fundamentals of Google Earth Engine]</h3>
+            <p class="item-meta">Existing profile-backed technical credential.</p>
+          </article>
+        </div>
+
+        <div class="dropzone" id="dropzone" role="group" aria-labelledby="dropzone-title" aria-describedby="dropzone-help inventoryStatus">
+          <h3 id="dropzone-title">Acquire New Item / Extract Reward</h3>
+          <p id="dropzone-help" class="muted">Drop image/PDF files or select manually. Files are never uploaded to a server; metadata persists locally when available.</p>
+          <div class="dropzone-controls">
+            <label for="itemUpload">Select reward files</label>
+            <input id="itemUpload" type="file" accept="image/*,.pdf,application/pdf" multiple />
+            <p class="status-msg" id="inventoryStatus" aria-live="polite" aria-atomic="true">Inventory scanner ready.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Constellation network -->
+      <section class="panel network" id="constellation-network" aria-labelledby="network-title">
+        <span class="system-label">Constellation Network / Sponsor Links</span>
+        <h2 id="network-title">Social Transmission Channels</h2>
+        <div class="network-grid">
+          <article class="channel"><strong>GitHub</strong><a href="https://github.com/taifurtoha" target="_blank" rel="noopener noreferrer">github.com/taifurtoha</a></article>
+          <article class="channel"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/taifurtoha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/taifurtoha</a></article>
+          <article class="channel"><strong>Instagram</strong><a href="https://www.instagram.com/taifurtoha/" target="_blank" rel="noopener noreferrer">instagram.com/taifurtoha</a></article>
+          <article class="channel"><strong>Threads</strong><a href="https://www.threads.net/@taifurtoha" target="_blank" rel="noopener noreferrer">threads.net/@taifurtoha</a></article>
+          <article class="channel"><strong>Pinterest</strong><a href="https://www.pinterest.com/taifurtoha/" target="_blank" rel="noopener noreferrer">pinterest.com/taifurtoha</a></article>
+          <article class="channel"><strong>X</strong><a href="https://x.com/taifurtaha" target="_blank" rel="noopener noreferrer">x.com/taifurtaha</a></article>
+          <article class="channel"><strong>Tumblr</strong><a href="https://durbar7.tumblr.com/" target="_blank" rel="noopener noreferrer">durbar7.tumblr.com</a></article>
+          <article class="channel"><strong>Snapchat</strong><small>@taifurtoha (handle only)</small></article>
+          <article class="channel"><strong>LINE</strong><small>@taifurtoha (handle only)</small></article>
+          <article class="channel"><strong>YouTube</strong><small>@taifurtoha (handle only)</small></article>
         </div>
       </section>
     </div>
   </main>
 
+  <div class="notify" id="notifyStack" aria-live="polite" aria-atomic="false"></div>
+
   <footer>
-    <small>&copy; <span id="year"></span> Taifur Toha · Scenario Dashboard Portfolio (static single-page)</small>
+    <div class="wrapper">System Window generated for Taifur Islam Toha · Static single-file deployment ready for GitHub Pages.</div>
   </footer>
 
   <script>
     (function () {
+      'use strict';
+
       var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var counters = document.querySelectorAll('.counter[data-target]');
-      var bars = document.querySelectorAll('.progress[data-width]');
-      var filterInput = document.getElementById('skillFilter');
-      var skillEntries = document.querySelectorAll('.skill-entry');
-      var statusLog = document.getElementById('statusLog');
-      var systemConsole = document.getElementById('systemConsole');
-      var year = document.getElementById('year');
+      var activationConsole = document.getElementById('activationConsole');
+      var consoleLog = document.getElementById('consoleLog');
+      var notifyStack = document.getElementById('notifyStack');
+      var statusLabel = document.getElementById('inventoryStatus');
+      var dropzone = document.getElementById('dropzone');
+      var uploadInput = document.getElementById('itemUpload');
+      var itemGrid = document.getElementById('itemGrid');
+      var maxSizeBytes = 8 * 1024 * 1024;
+      var storageKey = 'orvInventoryItems';
 
-      if (year) year.textContent = new Date().getFullYear();
+      var activationText = [
+        '[System] Synchronizing constellation vectors...',
+        '[System] Profile intelligence verified.',
+        '[System] The System has been activated.'
+      ].join(' ');
 
-      function animateCounter(el) {
-        var target = Number(el.getAttribute('data-target')) || 0;
-        if (reducedMotion || target < 2) {
-          el.textContent = String(target);
+      function typeActivation(text) {
+        if (!activationConsole) return;
+
+        if (reducedMotion) {
+          activationConsole.textContent = text;
           return;
         }
-        var start = null;
-        var duration = 850;
-        function step(ts) {
-          if (!start) start = ts;
-          var progress = Math.min((ts - start) / duration, 1);
-          el.textContent = String(Math.floor(target * progress));
-          if (progress < 1) requestAnimationFrame(step);
-          else el.textContent = String(target);
+
+        activationConsole.textContent = '';
+        var idx = 0;
+
+        function tick() {
+          activationConsole.textContent = text.slice(0, idx);
+          idx += 1;
+          if (idx <= text.length) {
+            window.setTimeout(tick, 24);
+          }
         }
-        requestAnimationFrame(step);
+
+        tick();
       }
 
-      function revealBars() {
+      function revealStats() {
+        var bars = document.querySelectorAll('.meter-fill');
         bars.forEach(function (bar) {
-          var width = Math.max(0, Math.min(100, Number(bar.getAttribute('data-width')) || 0));
-          bar.style.width = width + '%';
+          var value = Number(bar.getAttribute('data-progress')) || 0;
+          bar.style.width = String(Math.max(0, Math.min(100, value))) + '%';
         });
       }
 
-      function runMotion() {
-        revealBars();
-        counters.forEach(animateCounter);
+      function appendConsole(message) {
+        if (!consoleLog) return;
+        var item = document.createElement('li');
+        item.textContent = message;
+        consoleLog.prepend(item);
+
+        while (consoleLog.children.length > 6) {
+          consoleLog.removeChild(consoleLog.lastElementChild);
+        }
       }
 
-      if ('IntersectionObserver' in window && !reducedMotion) {
-        var targetPanel = document.querySelector('#identity');
-        var once = false;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!once && entry.isIntersecting) {
-              once = true;
-              runMotion();
-              observer.disconnect();
-            }
-          });
-        }, { threshold: 0.25 });
-        if (targetPanel) observer.observe(targetPanel);
-      } else {
-        runMotion();
+      function pushToast(message) {
+        if (!notifyStack) return;
+        var toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = message;
+        notifyStack.appendChild(toast);
+
+        window.setTimeout(function () {
+          toast.remove();
+        }, reducedMotion ? 1800 : 3800);
       }
 
-      if (filterInput) {
-        filterInput.addEventListener('input', function () {
-          var q = filterInput.value.trim().toLowerCase();
-          skillEntries.forEach(function (entry) {
-            var text = entry.textContent.toLowerCase();
-            entry.classList.toggle('hidden-skill', q.length > 0 && text.indexOf(q) === -1);
-          });
-        });
-      }
-
-      var logMessages = [
-        '[System] Constellation channel synchronized.',
-        '[System] Scenario attributes calibrated.',
-        '[System] Achievement archive loaded.',
-        '[System] Social gateway transmission stable.'
+      var pulses = [
+        'Constellation ping: sponsor links remain online.',
+        'Scenario update: active quest log synchronized.',
+        'Inventory link stable. Awaiting new reward extraction.',
+        'Status console heartbeat: nominal probability flow.'
       ];
-      var idx = 0;
 
-      function tickLogs() {
-        if (!statusLog || !systemConsole) return;
-        var msg = logMessages[idx % logMessages.length];
-        statusLog.textContent = msg;
-        systemConsole.textContent = msg + ' Probability flow: nominal.';
-        idx += 1;
+      var pulseIndex = 0;
+      function cyclePulse() {
+        var msg = '[Alert] ' + pulses[pulseIndex % pulses.length];
+        pulseIndex += 1;
+        appendConsole(msg);
+        pushToast(msg);
       }
 
-      tickLogs();
-      if (!reducedMotion) setInterval(tickLogs, 4000);
+      function bytesToText(size) {
+        if (size < 1024) return size + ' B';
+        if (size < 1024 * 1024) return (size / 1024).toFixed(1) + ' KB';
+        return (size / (1024 * 1024)).toFixed(2) + ' MB';
+      }
+
+      function inferRarity(file) {
+        if (file.type === 'application/pdf') return 'rarity-rare';
+        if (file.size > 3 * 1024 * 1024) return 'rarity-epic';
+        return 'rarity-common';
+      }
+
+      function saveInventory(records) {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(records));
+        } catch (error) {
+          appendConsole('[Warning] Storage unavailable; items kept for this session only.');
+        }
+      }
+
+      function loadInventory() {
+        try {
+          var raw = localStorage.getItem(storageKey);
+          return raw ? JSON.parse(raw) : [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function removeDynamicItem(id) {
+        var records = loadInventory().filter(function (entry) {
+          return entry.id !== id;
+        });
+        saveInventory(records);
+
+        var target = itemGrid.querySelector('[data-dynamic-id="' + id + '"]');
+        if (target) target.remove();
+
+        if (statusLabel) {
+          statusLabel.textContent = 'Removed extracted reward from inventory.';
+        }
+        appendConsole('[Inventory] Reward removed from local records.');
+      }
+
+      function renderDynamicCard(item) {
+        var article = document.createElement('article');
+        article.className = 'item ' + (item.rarity || 'rarity-common');
+        article.setAttribute('data-dynamic-id', item.id);
+
+        var rarity = document.createElement('span');
+        rarity.className = 'rarity';
+        rarity.textContent = 'User Item';
+        article.appendChild(rarity);
+
+        var title = document.createElement('h3');
+        title.textContent = '[Item: ' + item.name + ']';
+        article.appendChild(title);
+
+        var meta = document.createElement('p');
+        meta.className = 'item-meta';
+        meta.textContent = item.type + ' · ' + bytesToText(item.size);
+        article.appendChild(meta);
+
+        var preview = document.createElement('div');
+        preview.className = 'item-preview';
+
+        if (item.type === 'application/pdf') {
+          var badge = document.createElement('span');
+          badge.className = 'pdf-badge';
+          badge.textContent = 'PDF file detected';
+          preview.appendChild(badge);
+        } else if (item.previewDataUrl) {
+          var img = document.createElement('img');
+          img.src = item.previewDataUrl;
+          img.alt = item.name + ' preview';
+          preview.appendChild(img);
+        } else {
+          preview.textContent = 'Preview unavailable';
+        }
+
+        article.appendChild(preview);
+
+        var removeBtn = document.createElement('button');
+        removeBtn.type = 'button';
+        removeBtn.textContent = 'Remove Item';
+        removeBtn.addEventListener('click', function () {
+          removeDynamicItem(item.id);
+        });
+        article.appendChild(removeBtn);
+
+        itemGrid.appendChild(article);
+      }
+
+      function addInventoryRecord(record) {
+        var records = loadInventory();
+        records.push(record);
+        saveInventory(records);
+        renderDynamicCard(record);
+      }
+
+      function createRecordFromFile(file) {
+        var baseRecord = {
+          id: 'local-' + Date.now() + '-' + Math.random().toString(36).slice(2, 9),
+          name: file.name,
+          type: file.type || 'application/octet-stream',
+          size: file.size,
+          rarity: inferRarity(file),
+          previewDataUrl: ''
+        };
+
+        if (file.type.startsWith('image/')) {
+          var reader = new FileReader();
+          reader.onload = function () {
+            baseRecord.previewDataUrl = typeof reader.result === 'string' ? reader.result : '';
+            addInventoryRecord(baseRecord);
+          };
+          reader.readAsDataURL(file);
+        } else {
+          addInventoryRecord(baseRecord);
+        }
+      }
+
+      function validateFile(file) {
+        var isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+        var isImage = file.type.startsWith('image/');
+
+        if (!isPdf && !isImage) {
+          return 'Unsupported type. Use image or PDF only.';
+        }
+
+        if (file.size > maxSizeBytes) {
+          return 'File too large. Max size is ' + bytesToText(maxSizeBytes) + '.';
+        }
+
+        return '';
+      }
+
+      function processFiles(files) {
+        if (!files || files.length === 0) {
+          if (statusLabel) statusLabel.textContent = 'No files selected.';
+          return;
+        }
+
+        var accepted = 0;
+        Array.prototype.forEach.call(files, function (file) {
+          var validationError = validateFile(file);
+          if (validationError) {
+            if (statusLabel) statusLabel.textContent = validationError;
+            appendConsole('[Inventory] ' + validationError + ' (' + file.name + ')');
+            return;
+          }
+
+          accepted += 1;
+          createRecordFromFile(file);
+          appendConsole('[Inventory] Extracted reward: ' + file.name);
+        });
+
+        if (statusLabel) {
+          statusLabel.textContent = accepted > 0
+            ? accepted + ' item(s) acquired locally.'
+            : 'No valid files were added.';
+        }
+      }
+
+      function restoreDynamicItems() {
+        loadInventory().forEach(renderDynamicCard);
+      }
+
+      function bindDropzone() {
+        if (!dropzone || !uploadInput) return;
+
+        dropzone.addEventListener('dragover', function (event) {
+          event.preventDefault();
+          dropzone.classList.add('active');
+        });
+
+        dropzone.addEventListener('dragleave', function () {
+          dropzone.classList.remove('active');
+        });
+
+        dropzone.addEventListener('drop', function (event) {
+          event.preventDefault();
+          dropzone.classList.remove('active');
+          processFiles(event.dataTransfer.files);
+        });
+
+        uploadInput.addEventListener('change', function () {
+          processFiles(uploadInput.files);
+          uploadInput.value = '';
+        });
+      }
+
+      typeActivation(activationText);
+      revealStats();
+      restoreDynamicItems();
+      bindDropzone();
+      cyclePulse();
+
+      if (!reducedMotion) {
+        window.setInterval(cyclePulse, 5500);
+      }
     })();
   </script>
 </body>
